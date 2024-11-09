@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+{% for post in posts %}
+<br>
+<a href="{% url 'blog_create' %}">Ask What to Order here!</a>
+<div class="nav-right">
+</div>
+<div class="post-entry">
+<h2><a href="{% url 'blog_detail' post.pk %}">{{post.title}}</a>    </h2>
+<p>{{post.body}}</p>
+</div>
+{% endfor %}
+{% endblock content %}
